@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
     <remote name="me176c" fetch="https://github.com/me176c-dev/" />
+    <remote name="surfacepro3" fetch="https://github.com/vamanea/" />
     <remote name="kernel" fetch="https://git.kernel.org/pub/scm/linux/" />
     <remote name="intel" fetch="https://github.com/intel/" />
     <remote name="wireguard" fetch="https://git.zx2c4.com" />
 
     <!-- Device repositories -->
-    <project name="android_device_asus_K013" path="device/asus/K013" remote="me176c" groups="me176c,twrp">
+    <project name="android_device_microsoft_surfacepro3" path="device/microsoft/surfacepro3" remote="surfacepro3" groups="me176c,twrp">
         <linkfile src="Android.mk" dest="hardware/me176c/Android.mk" />
         <linkfile src="build/namespace.bp" dest="hardware/me176c/Android.bp" />
     </project>

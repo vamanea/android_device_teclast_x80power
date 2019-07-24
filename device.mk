@@ -2,8 +2,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
 $(call inherit-product,frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
-PRODUCT_BRAND := asus
-PRODUCT_DEVICE := K013
+PRODUCT_BRAND := microsoft
+PRODUCT_DEVICE := surfacepro3
 
 PRODUCT_MANUFACTURER := Microsoft
 PRODUCT_MODEL := Surface 3

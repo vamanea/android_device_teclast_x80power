@@ -1,11 +1,11 @@
-TARGET_DEVICE_DIR := device/asus/$(TARGET_DEVICE)
+TARGET_DEVICE_DIR := device/microsoft/$(TARGET_DEVICE)
 VENDOR_SECURITY_PATCH := 2019-07-05
 
 # Architecture
 TARGET_BOARD_PLATFORM := baytrail
 
 TARGET_ARCH := x86
-TARGET_ARCH_VARIANT := silvermont
+TARGET_ARCH_VARIANT := haswell
 TARGET_CPU_ABI := x86
 
 # Partitions
@@ -16,28 +16,30 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1879048192
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12285079040
 BOARD_CACHEIMAGE_PARTITION_SIZE := 678428672
+BOARD_USE_SPARSE_SYSTEM_IMAGE := false
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/me176c
+TARGET_KERNEL_SOURCE := kernel/surface3
 TARGET_KERNEL_ARCH := x86_64
+TARGET_KERNEL_DEFCONFIG := android-x86_64_defconfig
 
 # Use host distribution compiler if it is recent enough for Retpoline support
-ifneq ($(shell printf "%s\n" "7.3" "`gcc -dumpversion`" | sort -cV 2>&1),)
-    TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-linux-android-
-endif
+#ifneq ($(shell printf "%s\n" "7.3" "`gcc -dumpversion`" | sort -cV 2>&1),)
+#    TARGET_KERNEL_CROSS_COMPILE_PREFIX := x86_64-linux-android-
+#endif
 
 BOARD_KERNEL_IMAGE_NAME := bzImage
-BOARD_KERNEL_CMDLINE += quiet androidboot.hardware=me176c printk.devkmsg=on
+BOARD_KERNEL_CMDLINE += androidboot.hardware=me176c printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += tsc=reliable
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem
 # Block WiFi/BT by default until it is enabled by userspace
 BOARD_KERNEL_CMDLINE += rfkill.default_state=0
 # Register battery power supply early to avoid immediate reboot in charger mode
-BOARD_KERNEL_CMDLINE += ug31xx_battery.early=1
+#BOARD_KERNEL_CMDLINE += ug31xx_battery.early=1
 
 BOARD_SEPOLICY_DIRS += \
     $(TARGET_DEVICE_DIR)/sepolicy \
@@ -65,14 +67,14 @@ DEVICE_FRAMEWORK_MANIFEST_FILE += \
 # Init
 TARGET_FS_CONFIG_GEN := $(TARGET_DEVICE_DIR)/config.fs
 TARGET_SYSTEM_PROP := $(TARGET_DEVICE_DIR)/system.prop
-TARGET_INIT_VENDOR_LIB := libinit_me176c
+#TARGET_INIT_VENDOR_LIB := libinit_me176c
 
 # Graphics
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 i915.fastboot=1 i915.enable_fbc=1 drm.vblankoffdelay=1
 
 # Display
-TARGET_SCREEN_WIDTH := 1280
-TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 2160
+TARGET_SCREEN_HEIGHT := 1440
 
 # Surfaceflinger
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -90,10 +92,19 @@ MINIGBM_PATH := hardware/me176c/minigbm
 INTEL_MINIGBM := $(MINIGBM_PATH)
 
 # Audio
-USE_XML_AUDIO_POLICY_CONF := 1
+BOARD_USES_ALSA_AUDIO := true
+BUILD_WITH_ALSA_UTILS := true
+USE_XML_AUDIO_POLICY_CONF := 0
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_LINUX := true
+
+
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := false
+#BOARD_CUSTOM_BT_CONFIG := device/asus/K013/bluetooth/vnd_hammerhead.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/microsoft/surfacepro3/bluetooth
 
 # Media
 BUILD_WITH_FULL_STAGEFRIGHT := true
@@ -104,7 +115,7 @@ MFX_ENABLE_ITT_TRACES := false
 
 # Sensors
 USE_IIO_SENSOR_HAL := true
-NO_IIO_EVENTS := true
+NO_IIO_EVENTS := false
 
 # Thermal daemon
 THERMALD_GENERATE_CONFIG := false
@@ -113,11 +124,15 @@ THERMALD_BACKLIGHT_COOLING_DEVICE := false
 
 # WiFi
 WIFI_DRIVER_SOCKET_IFACE := wlan0
-WPA_SUPPLICANT_VERSION := VER_0_8_X
+#WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mwifiex
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_brcmfmac
 BOARD_HOSTAPD_DRIVER := NL80211
+WPA_SUPPLICANT_VERSION := VER_2_1_DEVEL
+WPA_SUPPLICANT_USE_HIDL := y
 
+# Camera
+USE_CAMERA_STUB := false
 # Build pre-optimized to speed up initial boot
 WITH_DEXPREOPT := true
 ifneq ($(TARGET_BUILD_VARIANT), eng)

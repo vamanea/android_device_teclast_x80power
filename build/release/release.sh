@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script used to build the public releases
 set -euo pipefail
-DEVICE_DIR=device/asus/K013
+DEVICE_DIR=device/microsoft/surfacepro3
 RELEASE_DIR="$(dirname "$(readlink -f "$0")")"
 . "$RELEASE_DIR/common.sh"
 
