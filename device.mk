@@ -26,11 +26,11 @@ PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.me176c \
-    init.me176c.rc \
-    ueventd.me176c.rc \
-    init.recovery.me176c.rc \
-    kernel-modules.me176c.rc \
+    fstab.surfacepro3 \
+    init.surfacepro3.rc \
+    ueventd.surfacepro3.rc \
+    init.recovery.surfacepro3.rc \
+    kernel-modules.surfacepro3.rc \
     su \
     powertop
 
@@ -70,7 +70,7 @@ PRODUCT_PACKAGES += \
     alsa_ctl \
     audio.a2dp.default \
     audio.r_submix.default \
-    audio.primary.me176c \
+    audio.primary.surfacepro3 \
     asound.conf \
     android.hardware.audio@4.0-impl \
     android.hardware.audio.effect@4.0-impl \
@@ -82,7 +82,7 @@ PRODUCT_PACKAGES += \
     Terminal
 # Light HAL
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.me176c
+    android.hardware.light@2.0-service.surfacepro3
 
 # Media
 PRODUCT_PACKAGES += \
@@ -96,7 +96,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.me176c
+    android.hardware.power@1.0-service.surfacepro3
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -111,7 +111,7 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    wifi.me176c.rc \
+    wifi.surfacepro3.rc \
     wpa_supplicant \
     wpa_supplicant.conf \
     hostapd
@@ -124,7 +124,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.me176c
+    camera.surfacepro3
 
 # Camera HAL
 PRODUCT_PACKAGES += \
