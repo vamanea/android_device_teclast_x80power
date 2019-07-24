@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(TARGET_DEVICE), K013)
+ifeq ($(TARGET_DEVICE), surfacepro3)
 ifneq ($(TARGET_NO_KERNEL),true)
 
 ## Externally influenced variables
@@ -31,7 +31,7 @@ KERNEL_OUT_CONFIG := $(abspath $(TARGET_OUT_INTERMEDIATES)/KERNEL_CONFIG_OBJ)
 
 # Configure kernel compiler toolchain
 KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(CC_WRAPPER) $(TARGET_KERNEL_CROSS_COMPILE_PREFIX)"
-KERNEL_MAKE := $(MAKE) -j6 -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE)
+KERNEL_MAKE := $(MAKE) -j8 -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE)
 
 # Kernel config
 KERNEL_CONFIG_GENERATED := $(KERNEL_OUT_CONFIG)/.config
@@ -65,6 +65,7 @@ KERNEL_MAKE_TARGET := $(KERNEL_MAKE_TARGET) modules
 
 KERNEL_MODULES_OUT := $(abspath $(TARGET_OUT_VENDOR)/lib/modules)
 KERNEL_MODULES_OBJ := $(abspath $(TARGET_OUT_INTERMEDIATES)/KERNEL_MODULES)
+KERNEL_MODULES_ROOT := $(abspath $(TARGET_ROOT_OUT)/lib/modules)
 
 $(KERNEL_MODULES_OBJ): TARGET_KERNEL_BINARIES
 	@echo "Installing Kernel Modules"
@@ -75,6 +76,8 @@ $(KERNEL_MODULES_OUT): $(KERNEL_MODULES_OBJ)
 	$(hide) rm -rf $(KERNEL_MODULES_OUT)
 	KERNELRELEASE=$$(<$(KERNEL_OUT)/include/config/kernel.release) && \
 		cp -a $(KERNEL_MODULES_OBJ)/lib/modules/$$KERNELRELEASE $(KERNEL_MODULES_OUT) && \
+		mkdir -p $(KERNEL_MODULES_ROOT) && \
+		ln -fs /vendor/lib/modules $(KERNEL_MODULES_ROOT)/$$KERNELRELEASE && \
 		rm -f $(KERNEL_MODULES_OUT)/{source,build}
 
 # TODO: Remove kernel modules from kernel target
