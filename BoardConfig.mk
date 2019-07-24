@@ -32,7 +32,7 @@ TARGET_KERNEL_DEFCONFIG := android-x86_64_defconfig
 #endif
 
 BOARD_KERNEL_IMAGE_NAME := bzImage
-BOARD_KERNEL_CMDLINE += androidboot.hardware=me176c printk.devkmsg=on
+BOARD_KERNEL_CMDLINE += androidboot.hardware=surfacepro3 printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += tsc=reliable
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem
@@ -67,7 +67,6 @@ DEVICE_FRAMEWORK_MANIFEST_FILE += \
 # Init
 TARGET_FS_CONFIG_GEN := $(TARGET_DEVICE_DIR)/config.fs
 TARGET_SYSTEM_PROP := $(TARGET_DEVICE_DIR)/system.prop
-#TARGET_INIT_VENDOR_LIB := libinit_me176c
 
 # Graphics
 BOARD_KERNEL_CMDLINE += vga=current i915.modeset=1 i915.fastboot=1 i915.enable_fbc=1 drm.vblankoffdelay=1
@@ -141,7 +140,7 @@ ifneq ($(TARGET_BUILD_VARIANT), eng)
 endif
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(TARGET_DEVICE_DIR)/init/root/fstab.me176c
+TARGET_RECOVERY_FSTAB := $(TARGET_DEVICE_DIR)/init/root/fstab.surfacepro3
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # Include support for ARM on x86 native bridge
