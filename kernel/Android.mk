@@ -9,9 +9,9 @@ LOCAL_MODULE_RELATIVE_PATH := init
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := me176c_defconfig
+LOCAL_MODULE := surface3_defconfig
 LOCAL_MODULE_CLASS := FAKE
-LOCAL_SRC_FILE := me176c_defconfig
+LOCAL_SRC_FILE := surface3_defconfig
 include $(BUILD_SYSTEM)/base_rules.mk
 
 $(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/$(LOCAL_SRC_FILE) $(TARGET_FIRMWARE_KERNEL_DEFCONFIG)

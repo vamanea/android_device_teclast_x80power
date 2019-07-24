@@ -32,7 +32,7 @@
 #define MIXER_INTERNAL_MIC_PATH  "internal-mic"
 #define MIXER_HEADSET_MIC_PATH   "headset-mic"
 
-#define PRIMARY_DEVICE  0
+#define PRIMARY_DEVICE  1
 
 #define OUT_CHANNEL_COUNT  2
 #define OUT_SAMPLE_RATE    48000

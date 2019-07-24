@@ -46,16 +46,15 @@ service vendor.charger /charger
 on charger
     mkdir /me176c
     mount ext4 /dev/block/internal/by-name/config /me176c rw nosuid nodev noatime data=ordered
-    trigger upi_ug31xx
 
 # I/O Scheduler (LineageOS feature)
 on property:sys.io.scheduler=*
-    write /sys/block/mmcblk2/queue/scheduler ${sys.io.scheduler}
+    write /sys/block/sda/queue/scheduler ${sys.io.scheduler}
 
 on property:sys.io.scheduler=cfq
-    restorecon --recursive /sys/block/mmcblk2/queue
-    write /sys/block/mmcblk2/queue/iosched/slice_idle 0
+    restorecon --recursive /sys/block/sda/queue
+    write /sys/block/sda/queue/iosched/slice_idle 0
 
 on property:sys.io.scheduler=bfq
     restorecon --recursive /sys/block/mmcblk2/queue
-    write /sys/block/mmcblk2/queue/iosched/slice_idle 0
+    write /sys/block/sda/queue/iosched/slice_idle 0

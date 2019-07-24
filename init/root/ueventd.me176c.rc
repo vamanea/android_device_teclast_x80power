@@ -8,15 +8,17 @@
 # Power
 /sys/devices/system/cpu/cpu*  online                         0664  system  system
 /sys/devices/system/cpu/cpu*  cpufreq/scaling_governor       0644  system  system
-/sys/devices/platform*        i2c-GDIX1001:00/power/control  0644  system  system
-/sys/devices/platform*        i2c-UPIG3105:00/power/control  0644  system  system
+/sys/devices/platform*        i2c-NTRG0001:01/power/control  0644  system  system
+/sys/devices/platform*        i2c-MSHW0030:00/power/control  0644  system  system
 
 # Backlight
 /sys/devices/pci*  intel_backlight/brightness  0664  system  system
 
+# Camera
+/dev/video*               0660  cameraserver  system
+
 # Sensors
-/dev/iio:device0  0644  system  system
-/dev/iio:device1  0644  system  system
+/dev/iio:device*  0644  system  system
 
 /sys/devices/platform*  iio:device0/in_accel_sampling_frequency    0644  system  system
 /sys/devices/platform*  iio:device0/in_accel_scale                 0644  system  system
@@ -42,8 +44,6 @@
 /sys/devices/virtual/powercap/intel-rapl/intel-rapl*  constraint_1_power_limit_uw  0644  system  system
 /sys/devices/virtual/powercap/intel-rapl/intel-rapl*  constraint_1_time_window_us  0644  system  system
 
-# UPI gauge (battery)
-/dev/ug31xx  0660  system  system
 
 # Bluetooth
 /sys/devices/platform/80860F0A:01*  state  0660  bluetooth  bluetooth

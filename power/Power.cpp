@@ -11,8 +11,8 @@ namespace implementation {
 
 using android::base::WriteStringToFile;
 
-#define TOUCHSCREEN_POWER_CONTROL_PATH  "/sys/bus/i2c/devices/i2c-GDIX1001:00/power/control"
-#define BATTERY_POWER_CONTROL_PATH      "/sys/bus/i2c/devices/i2c-UPIG3105:00/power/control"
+#define TOUCHSCREEN_POWER_CONTROL_PATH  "/sys/bus/i2c/devices/i2c-NTRG0001:01/power/control"
+#define BATTERY_POWER_CONTROL_PATH      "/sys/bus/i2c/devices/i2c-MSHW0030:00/power/control"
 
 #define RUNTIME_PM_ON           "on"
 #define RUNTIME_PM_AUTOSUSPEND  "auto"
