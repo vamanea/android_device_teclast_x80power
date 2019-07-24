@@ -1,14 +1,14 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := wifi.me176c.rc
+LOCAL_MODULE := wifi.surfacepro3.rc
 LOCAL_VENDOR_MODULE := true
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_RELATIVE_PATH := init
 include $(BUILD_PREBUILT)
 
-# Create symlink for "rfkill" tool in toybox (used in wifi.me176c.rc)
+# Create symlink for "rfkill" tool in toybox (used in wifi.surfacepro3.rc)
 $(call symlink-file,$(TARGET_OUT_VENDOR_EXECUTABLES)/toybox_vendor,toybox_vendor,$(TARGET_OUT_VENDOR_EXECUTABLES)/rfkill)
 $(LOCAL_INSTALLED_MODULE): | $(TARGET_OUT_VENDOR_EXECUTABLES)/rfkill
 
