@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := kernel-modules.me176c.rc
+LOCAL_MODULE := kernel-modules.surfacepro3.rc
 LOCAL_VENDOR_MODULE := true
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 LOCAL_MODULE_CLASS := ETC
@@ -16,9 +16,5 @@ include $(BUILD_SYSTEM)/base_rules.mk
 
 $(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/$(LOCAL_SRC_FILE) $(TARGET_FIRMWARE_KERNEL_DEFCONFIG)
 	cat $^ > $@
-
-ifeq ($(RECOVERY_VARIANT), twrp)
-$(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/me176c_defconfig_twrp
-endif
 
 TARGET_KERNEL_DEFCONFIG := $(LOCAL_BUILT_MODULE)
