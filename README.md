@@ -1,3 +1,6 @@
+# LineageOS 16.0 for Microsoft Surface Pro 3
+This is a work in progress, based on the MeMO pad 7 work(below some instructions) and android-x86
+
 # LineageOS 16.0 for ASUS MeMO Pad 7 (ME176C(X)))
 [LineageOS] is a free, community built, aftermarket firmware distribution of Android 9 (Pie),
 which is designed to increase performance and reliability over stock Android for your device.
