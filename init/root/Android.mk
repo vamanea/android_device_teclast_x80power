@@ -1,22 +1,22 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := fstab.me176c
+LOCAL_MODULE := fstab.surfacepro3
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := init.me176c.rc
+LOCAL_MODULE := init.surfacepro3.rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
-LOCAL_REQUIRED_MODULES := init.me176c.common.rc
+LOCAL_REQUIRED_MODULES := init.surfacepro3.common.rc
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := init.me176c.common.rc
+LOCAL_MODULE := init.surfacepro3.common.rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
@@ -24,23 +24,23 @@ LOCAL_REQUIRED_MODULES := fs_config_files
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := ueventd.me176c.rc
+LOCAL_MODULE := ueventd.surfacepro3.rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := init.recovery.me176c.rc
+LOCAL_MODULE := init.recovery.surfacepro3.rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
-LOCAL_REQUIRED_MODULES := init.recovery.me176c.common.rc
+LOCAL_REQUIRED_MODULES := init.recovery.surfacepro3.common.rc
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := init.recovery.me176c.common.rc
+LOCAL_MODULE := init.recovery.surfacepro3.common.rc
 LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES := init.me176c.common.rc
+LOCAL_SRC_FILES := init.surfacepro3.common.rc
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
