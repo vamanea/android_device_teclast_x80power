@@ -6,6 +6,7 @@ on zygote-start
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant -dd \
     -O/data/vendor/wifi/wpa/sockets \
+    -I/system/etc/wifi/wpa_supplicant_overlay.conf \
     -g@android:wpa_wlan0
     interface android.hardware.wifi.supplicant@1.0::ISupplicant default
     interface android.hardware.wifi.supplicant@1.1::ISupplicant default

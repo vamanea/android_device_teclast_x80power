@@ -143,6 +143,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
+    $(if $(wildcard $(PRODUCT_DIR)/wifi/wpa_supplicant_overlay.conf),$(PRODUCT_DIR),$(LOCAL_PATH)/wifi/)wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(foreach f,$(wildcard $(LOCAL_PATH)/alsa/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/init.d/*),$(f):$(subst $(LOCAL_PATH),system/etc/,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/keylayout/*),$(f):$(subst $(LOCAL_PATH),system/vendor/usr/,$(f)))
