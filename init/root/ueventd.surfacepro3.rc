@@ -17,18 +17,6 @@
 # Camera
 /dev/video*               0660  cameraserver  system
 
-# Sensors
-/dev/iio:device*  0644  system  system
-
-/sys/devices/platform*  iio:device0/in_accel_sampling_frequency    0644  system  system
-/sys/devices/platform*  iio:device0/in_accel_scale                 0644  system  system
-/sys/devices/platform*  iio:device0/buffer/enable                  0644  system  system
-/sys/devices/platform*  iio:device0/buffer/length                  0644  system  system
-/sys/devices/platform*  iio:device0/scan_elements/in_accel_x_en    0644  system  system
-/sys/devices/platform*  iio:device0/scan_elements/in_accel_y_en    0644  system  system
-/sys/devices/platform*  iio:device0/scan_elements/in_accel_z_en    0644  system  system
-/sys/devices/platform*  iio:device0/scan_elements/in_timestamp_en  0644  system  system
-/sys/devices/platform*  iio:device0/trigger/current_trigger        0644  system  system
 
 # Thermal daemon
 /sys/devices/virtual/thermal/thermal_zone*    trip_point_0_temp  0644  system  system
@@ -44,6 +32,131 @@
 /sys/devices/virtual/powercap/intel-rapl/intel-rapl*  constraint_1_power_limit_uw  0644  system  system
 /sys/devices/virtual/powercap/intel-rapl/intel-rapl*  constraint_1_time_window_us  0644  system  system
 
+# Sensors
+/dev/iio:device*  0644  system  system
 
-# Bluetooth
-/sys/devices/platform/80860F0A:01*  state  0660  bluetooth  bluetooth
+/sys/bus/iio/devices/iio:device* buffer/watermark              0760  system   system
+/sys/bus/iio/devices/iio:device* buffer/length              0760  system   system
+/sys/bus/iio/devices/iio:device* buffer/enable              0760  system   system
+/sys/bus/iio/devices/iio:device* buffer/data_available              0760  system   system
+/sys/bus/iio/devices/iio:device*  trigger/current_trigger        0644  system  system
+/sys/bus/iio/devices/iio:device*  name       0760  system   system
+
+/sys/bus/iio/devices/iio:device*    0664   system     system
+
+# accel, gyro
+/sys/bus/iio/devices/iio:device* scan_elements      0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_x_en    0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_x_index    0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_x_type    0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_y_en    0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_y_index    0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_y_type    0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_z_en    0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_z_index    0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_accel_z_type    0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_timestamp_en  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_timestamp_index  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_timestamp_type  0760  system   system
+
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_x_en  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_x_index  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_x_type  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_y_en  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_y_index  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_y_type  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_z_en  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_z_index  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_anglvel_z_type  0760  system   system
+
+
+/sys/bus/iio/devices/iio:device* in_accel_scale_available   0760  system   system
+/sys/bus/iio/devices/iio:device* in_accel_x_raw         0760  system   system
+/sys/bus/iio/devices/iio:device* in_accel_y_raw         0760  system   system
+/sys/bus/iio/devices/iio:device* in_accel_z_raw         0760  system   system
+/sys/bus/iio/devices/iio:device* in_accel_scale       0760  system   system
+/sys/bus/iio/devices/iio:device* in_accel_sampling_frequency       0760  system   system
+/sys/bus/iio/devices/iio:device* in_accel_offset       0760  system   system
+/sys/bus/iio/devices/iio:device* in_accel_hysteresis       0760  system   system
+
+
+/sys/bus/iio/devices/iio:device* in_anglvel_scale_available 0760  system   system
+/sys/bus/iio/devices/iio:device* in_anglvel_x_raw       0760  system   system
+/sys/bus/iio/devices/iio:device* in_anglvel_y_raw       0760  system   system
+/sys/bus/iio/devices/iio:device* in_anglvel_z_raw       0760  system   system
+/sys/bus/iio/devices/iio:device* in_anglvel_scale     0760  system   system
+/sys/bus/iio/devices/iio:device* in_anglvel_sampling_frequency     0760  system   system
+/sys/bus/iio/devices/iio:device* in_anglvel_offset     0760  system   system
+/sys/bus/iio/devices/iio:device* in_anglvel_hysteresis     0760  system   system
+
+/sys/bus/iio/devices/iio:device* max_delivery_rate      0760  system   system
+/sys/bus/iio/devices/iio:device* reset_counter          0760  system   system
+/sys/bus/iio/devices/iio:device* dev                0760  system   system
+
+# light
+/sys/bus/iio/devices/iio:device* scan_elements  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_illuminance_en  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_illuminance_index  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_illuminance_type   0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_intensity_both_en  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_intensity_both_index  0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_intensity_both_type    0760  system   system
+/sys/bus/iio/devices/iio:device* in_illuminance_sampling_frequency     0760  system   system
+/sys/bus/iio/devices/iio:device* in_illuminance_hysteresis       0760  system   system
+/sys/bus/iio/devices/iio:device* in_illuminance_offset        0760  system   system
+/sys/bus/iio/devices/iio:device* in_illuminance_raw       0760  system   system
+/sys/bus/iio/devices/iio:device* in_illuminance_scale       0760  system   system
+/sys/bus/iio/devices/iio:device* in_intensity_offset       0760  system   system
+/sys/bus/iio/devices/iio:device* in_intensity_sampling_frequency       0760  system   system
+/sys/bus/iio/devices/iio:device* in_intensity_scale       0760  system   system
+/sys/bus/iio/devices/iio:device* in_intensity_hysteresis       0760  system   system
+/sys/bus/iio/devices/iio:device* in_intensity_both_raw     0760  system   system
+/sys/bus/iio/devices/iio:device* dev                0760  system   system
+/sys/bus/iio/devices/iio:device* uevent             0760  system   system
+
+#inclination
+/sys/bus/iio/devices/iio:device* in_incli_x_raw              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_incli_y_en              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_incli_x_index              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_incli_x_en              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_incli_y_index              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_incli_z_type              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_incli_z_en              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_incli_y_type              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_incli_z_index              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_incli_x_type              0760  system   system
+/sys/bus/iio/devices/iio:device* in_incli_y_raw              0760  system   system
+/sys/bus/iio/devices/iio:device* dev              0760  system   system
+/sys/bus/iio/devices/iio:device* in_incli_sampling_frequency              0760  system   system
+/sys/bus/iio/devices/iio:device* in_incli_z_raw              0760  system   system
+/sys/bus/iio/devices/iio:device* in_incli_scale              0760  system   system
+/sys/bus/iio/devices/iio:device* in_incli_hysteresis              0760  system   system
+/sys/bus/iio/devices/iio:device* in_incli_offset              0760  system   system
+/sys/bus/iio/devices/iio:device* name              0760  system   system
+
+#rotation
+/sys/bus/iio/devices/iio:device* scan_elements              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_rot_quaternion_index              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_rot_quaternion_en              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_rot_quaternion_type              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_scale              0760  system   system
+/sys/bus/iio/devices/iio:device* trigger              0760  system   system
+/sys/bus/iio/devices/iio:device* trigger/current_trigger              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_quaternion_raw              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_offset              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_hysteresis              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_sampling_frequency              0760  system   system
+
+#magn
+/sys/bus/iio/devices/iio:device* uevent              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_from_north_magnetic_tilt_comp_raw              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_rot_from_north_magnetic_tilt_comp_type              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_rot_from_north_magnetic_tilt_comp_index              0760  system   system
+/sys/bus/iio/devices/iio:device* scan_elements/in_rot_from_north_magnetic_tilt_comp_en              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_scale              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_offset              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_hysteresis              0760  system   system
+/sys/bus/iio/devices/iio:device* in_rot_sampling_frequency              0760  system   system
+
