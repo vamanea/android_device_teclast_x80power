@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- From Android-x86 repositories -->
+  <remote  name="x86" fetch="git://git.osdn.net/gitroot/android-x86" />
+
+  <project path="external/alsa-lib" name="platform/external/alsa-lib" remote="x86" revision="oreo-x86" />
+  <project path="external/alsa-utils" name="platform/external/alsa-utils" remote="x86" revision="oreo-x86" />
+  <project path="external/bluetooth/bluez" name="platform/external/bluetooth/bluez" remote="x86" revision="oreo-x86" />
+  <project path="hardware/libaudio" name="platform/hardware/libaudio" remote="x86" revision="oreo-x86" />
+  <project path="hardware/libcamera" name="platform/hardware/libcamera" remote="x86" revision="oreo-x86" />
+</manifest>
