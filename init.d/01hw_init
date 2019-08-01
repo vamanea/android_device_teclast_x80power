@@ -264,18 +264,14 @@ function init_hal_sensors()
 			has_sensors=false
 			;;
 	esac
+	set_property ro.iio.accel.z.opt_scale -1
+	set_property ro.iio.accel.x.opt_scale -1
+	set_property ro.iio.accel.y.opt_scale -1
 
-	# has iio sensor-hub?
-	if [ -n "`ls /sys/bus/iio/devices/iio:device* 2> /dev/null`" ]; then
-		busybox chown -R 1000.1000 /sys/bus/iio/devices/iio:device*/
-		[ -n "`ls /sys/bus/iio/devices/iio:device*/in_accel_x_raw 2> /dev/null`" ] && has_sensors=true
-		hal_sensors=iio
-	elif lsmod | grep -q lis3lv02d_i2c; then
-		hal_sensors=hdaps
-		has_sensors=true
-	elif [ "$hal_sensors" != "kbd" ]; then
-		has_sensors=true
-	fi
+	chown system.system /sys/bus/iio/devices/iio:device*/*
+	chown system.system /sys/bus/iio/devices/iio:device*/buffer/*
+	chown system.system /sys/bus/iio/devices/iio:device*/trigger/*
+	chown system.system /sys/bus/iio/devices/iio:device*/scan_elements/*
 }
 
 function init_ril()
@@ -310,7 +306,7 @@ function do_init()
 	init_hal_bluetooth
 	init_hal_camera
 	init_hal_lights
-	init_hal_power
+	#init_hal_power
 	init_power
 	init_hal_sensors
 	init_ril

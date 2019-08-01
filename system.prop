@@ -18,9 +18,9 @@ hal.audio.out=pcmC1D0p
 hal.audio.in=pcmC1D0c
 
 # Sensors
-ro.iio.accel.panel=5
-ro.iio.accel.rotation=4
-ro.iio.magn.quirks=no-trig
+#ro.iio.accel.panel=5
+#ro.iio.accel.rotation=4
+#ro.iio.magn.quirks=no-trig
 
 # WiFi
 wifi.interface=wlan0
