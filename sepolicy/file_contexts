@@ -2,7 +2,7 @@
 /dev/block/zram0                                        u:object_r:swap_block_device:s0
 
 # Partitions
-/surfacepro3                                                 u:object_r:surfacepro3_config_file:s0
+/x80power                                                 u:object_r:x80power_config_file:s0
 
 # Graphics
 /dev/dri                                                u:object_r:gpu_device:s0
@@ -19,5 +19,5 @@
 
 # HALs
 /system/vendor/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey  u:object_r:hal_drm_clearkey_exec:s0
-/system/vendor/bin/hw/android\.hardware\.light@2\.0-service\.surfacepro3  u:object_r:hal_light_surfacepro3_exec:s0
-/system/vendor/bin/hw/android\.hardware\.power@1\.0-service\.surfacepro3  u:object_r:hal_power_surfacepro3_exec:s0
+/system/vendor/bin/hw/android\.hardware\.light@2\.0-service\.x80power  u:object_r:hal_light_x80power_exec:s0
+/system/vendor/bin/hw/android\.hardware\.power@1\.0-service\.x80power  u:object_r:hal_power_x80power_exec:s0

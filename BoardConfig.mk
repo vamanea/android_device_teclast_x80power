@@ -1,4 +1,4 @@
-TARGET_DEVICE_DIR := device/microsoft/$(TARGET_DEVICE)
+TARGET_DEVICE_DIR := device/teclast/$(TARGET_DEVICE)
 VENDOR_SECURITY_PATCH := 2019-07-05
 
 # Architecture
@@ -32,7 +32,7 @@ TARGET_KERNEL_DEFCONFIG := android-x86_64_defconfig
 #endif
 
 BOARD_KERNEL_IMAGE_NAME := bzImage
-BOARD_KERNEL_CMDLINE += androidboot.hardware=surfacepro3 printk.devkmsg=on
+BOARD_KERNEL_CMDLINE += androidboot.hardware=x80power printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += tsc=reliable
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem
@@ -103,7 +103,7 @@ BOARD_HAVE_BLUETOOTH_LINUX := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := false
 #BOARD_CUSTOM_BT_CONFIG := device/asus/K013/bluetooth/vnd_hammerhead.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/microsoft/surfacepro3/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/teclast/x80power/bluetooth
 
 # Media
 BUILD_WITH_FULL_STAGEFRIGHT := true
@@ -140,7 +140,7 @@ ifneq ($(TARGET_BUILD_VARIANT), eng)
 endif
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(TARGET_DEVICE_DIR)/init/root/fstab.surfacepro3
+TARGET_RECOVERY_FSTAB := $(TARGET_DEVICE_DIR)/init/root/fstab.x80power
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # Include support for ARM on x86 native bridge

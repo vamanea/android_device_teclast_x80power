@@ -1,16 +1,16 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
-$(call inherit-product,frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product,frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 
-PRODUCT_BRAND := microsoft
-PRODUCT_DEVICE := surfacepro3
+PRODUCT_BRAND := teclast
+PRODUCT_DEVICE := x80power
 
-PRODUCT_MANUFACTURER := Microsoft
-PRODUCT_MODEL := Surface 3
+PRODUCT_MANUFACTURER := Teclast
+PRODUCT_MODEL := X80 Power
 
 PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Tablet originally shipped with Android 4.4 KitKat
 PRODUCT_SHIPPING_API_LEVEL := 19
@@ -26,11 +26,11 @@ PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.surfacepro3 \
-    init.surfacepro3.rc \
-    ueventd.surfacepro3.rc \
-    init.recovery.surfacepro3.rc \
-    kernel-modules.surfacepro3.rc \
+    fstab.x80power \
+    init.x80power.rc \
+    ueventd.x80power.rc \
+    init.recovery.x80power.rc \
+    kernel-modules.x80power.rc \
     su \
     powertop
 
@@ -70,7 +70,7 @@ PRODUCT_PACKAGES += \
     alsa_ctl \
     audio.a2dp.default \
     audio.r_submix.default \
-    audio.primary.surfacepro3 \
+    audio.primary.x80power \
     asound.conf \
     android.hardware.audio@4.0-impl \
     android.hardware.audio.effect@4.0-impl \
@@ -82,7 +82,7 @@ PRODUCT_PACKAGES += \
     Terminal
 # Light HAL
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.surfacepro3
+    android.hardware.light@2.0-service.x80power
 
 # Media
 PRODUCT_PACKAGES += \
@@ -96,7 +96,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.surfacepro3
+    android.hardware.power@1.0-service.x80power
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -111,7 +111,7 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    wifi.surfacepro3.rc \
+    wifi.x80power.rc \
     wpa_supplicant \
     wpa_supplicant.conf \
     hostapd
@@ -124,7 +124,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.surfacepro3
+    camera.x80power
 
 # Camera HAL
 PRODUCT_PACKAGES += \

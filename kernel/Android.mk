@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := kernel-modules.surfacepro3.rc
+LOCAL_MODULE := kernel-modules.x80power.rc
 LOCAL_VENDOR_MODULE := true
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 LOCAL_MODULE_CLASS := ETC

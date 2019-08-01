@@ -1,4 +1,4 @@
-#define LOG_TAG "android.hardware.power@1.0-service.surfacepro3"
+#define LOG_TAG "android.hardware.power@1.0-service.x80power"
 
 #include <hidl/HidlTransportSupport.h>
 #include "Power.h"

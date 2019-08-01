@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(TARGET_DEVICE), surfacepro3)
+ifeq ($(TARGET_DEVICE), x80power)
 ifneq ($(TARGET_NO_KERNEL),true)
 
 ## Externally influenced variables

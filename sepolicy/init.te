@@ -1,8 +1,8 @@
 # Mount /mnt/vendor/factory
 allow init mnt_vendor_file:dir mounton;
 
-# Mount /surfacepro3 in recovery and charger mode
-allow init surfacepro3_config_file:dir mounton;
+# Mount /x80power in recovery and charger mode
+allow init x80power_config_file:dir mounton;
 
 type sysfs_init, fs_type, sysfs_type;
 allow init sysfs_init:file w_file_perms;

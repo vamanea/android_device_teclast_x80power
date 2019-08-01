@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_surfacepro3.mk
+    $(LOCAL_DIR)/lineage_x80power.mk
