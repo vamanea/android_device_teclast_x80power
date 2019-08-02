@@ -123,14 +123,14 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 
 # Camera
-PRODUCT_PACKAGES += \
-    camera.x80power
+#PRODUCT_PACKAGES += \
+#    camera.x80power
 
 # Camera HAL
-PRODUCT_PACKAGES += \
-    camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+#PRODUCT_PACKAGES += \
+#    camera.device@3.2-impl \
+#    android.hardware.camera.provider@2.4-impl \
+#    android.hardware.camera.provider@2.4-service
 
 
 # Hardware
