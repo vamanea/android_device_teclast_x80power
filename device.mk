@@ -166,3 +166,4 @@ $(call inherit-product-if-exists,external/bluetooth/blue/android/Android.mk)
 
 $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 
+$(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
