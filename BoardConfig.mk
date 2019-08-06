@@ -4,9 +4,15 @@ VENDOR_SECURITY_PATCH := 2019-07-05
 # Architecture
 TARGET_BOARD_PLATFORM := baytrail
 
-TARGET_ARCH := x86
-TARGET_ARCH_VARIANT := haswell
-TARGET_CPU_ABI := x86
+TARGET_CPU_ABI := x86_64
+TARGET_ARCH := x86_64
+TARGET_ARCH_VARIANT := x86_64
+
+TARGET_2ND_CPU_ABI := x86
+TARGET_2ND_ARCH := x86
+TARGET_2ND_ARCH_VARIANT := x86_64
+
+TARGET_USES_64_BIT_BINDER := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 4096
@@ -22,9 +28,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/surface3
+TARGET_KERNEL_SOURCE := kernel/x80power
 TARGET_KERNEL_ARCH := x86_64
-TARGET_KERNEL_DEFCONFIG := android-x86_64_defconfig
+#TARGET_KERNEL_DEFCONFIG := android-x86_64_defconfig
 
 # Use host distribution compiler if it is recent enough for Retpoline support
 #ifneq ($(shell printf "%s\n" "7.3" "`gcc -dumpversion`" | sort -cV 2>&1),)

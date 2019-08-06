@@ -4,7 +4,7 @@ MICROCODE_DIR := $(LOCAL_PATH)/microcode
 MICROCODE_FILE := intel-ucode/06-37-08
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := surface3_defconfig_firmware
+LOCAL_MODULE := x80power_defconfig_firmware
 LOCAL_MODULE_CLASS := FAKE
 
 include $(BUILD_SYSTEM)/base_rules.mk
