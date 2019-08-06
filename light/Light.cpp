@@ -14,7 +14,7 @@ constexpr auto BRIGHTNESS_PATH = "/sys/class/backlight/intel_backlight/brightnes
 
 constexpr uint32_t getBrightness(const uint32_t color) {
     // Based on specification in LightState.color
-    return ((77*((color>>16)&0x00ff)) + (150*((color>>8)&0x00ff)) + (29*(color&0x00ff))) >> 8;
+    return (((77*((color>>16)&0x00ff)) + (150*((color>>8)&0x00ff)) + (29*(color&0x00ff))) >> 8) / 10;
 }
 }
 
