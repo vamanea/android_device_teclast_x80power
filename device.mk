@@ -70,6 +70,7 @@ PRODUCT_PACKAGES += \
     alsa_ctl \
     audio.a2dp.default \
     audio.r_submix.default \
+    audio_policy_configuration.xml \
     audio.primary.x80power \
     asound.conf \
     android.hardware.audio@4.0-impl \
@@ -96,7 +97,12 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.x80power
+    android.hardware.power@1.1-service.x80power
+
+# Memtrack
+PRODUCT_PACKAGES += memtrack.default \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl
 
 # Sensors
 PRODUCT_PACKAGES += \
