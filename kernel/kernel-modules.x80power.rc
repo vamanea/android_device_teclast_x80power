@@ -112,7 +112,8 @@ service vendor.kernel-modules /vendor/bin/modprobe -a -d /vendor/lib/modules \
     dwc3_pci \
     video \
     sdhci_acpi \
-    sdhci
+    sdhci \
+    kxcjk-1013
     oneshot
     class early_hal
     seclabel u:r:vendor_modprobe:s0
