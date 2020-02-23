@@ -12,7 +12,6 @@ TARGET_ARCH_VARIANT := silvermont
 #TARGET_2ND_ARCH := x86
 #TARGET_2ND_ARCH_VARIANT := x86_64
 
-TARGET_USES_64_BIT_BINDER := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 4096
@@ -56,6 +55,8 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(TARGET_DEVICE_DIR)/sepolicy/private
 
 # Uncomment this to set SELinux to permissive by default
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+TARGET_USES_64_BIT_BINDER := true
 
 # Optimize for low RAM devices
 MALLOC_SVELTE := true
