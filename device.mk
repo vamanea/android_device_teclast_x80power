@@ -19,8 +19,12 @@ PRODUCT_SHIPPING_API_LEVEL := 19
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 GAPPS_VARIANT := pico
-GAPPS_EXCLUDED_PACKAGES := Hangouts GooglePackageInstaller
+GAPPS_EXCLUDED_PACKAGES := Hangouts GooglePackageInstaller TrichromeLibrary
+GAPPS_PRODUCT_PACKAGES += Chrome
 
+GAPPS_FORCE_PIXEL_LAUNCHER := true
+GAPPS_FORCE_PACKAGE_OVERRIDES := true
+GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -90,12 +94,20 @@ PRODUCT_PACKAGES += \
     media_codecs.xml \
     media_profiles_V1_0.xml \
     i965_drv_video \
-    libstagefrighthw \
+    libffmpeg_omx \
+    libffmpeg_extractor \
+    libffmpeg_utils \
     libmfx_omx_core \
     libmfx_omx_components_hw \
     libmfxhw32
+# libstagefrighthw is not selected, but the intel omx plugin can be used
+# manually through the below property
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.hwaccel=1 \
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so
 
-# Power
+# power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service.x80power
 
