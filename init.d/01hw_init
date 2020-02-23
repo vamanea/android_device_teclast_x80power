@@ -36,9 +36,6 @@ function init_power()
 	#echo 10000000 > /sys/devices/virtual/powercap/intel-rapl/intel-rapl\:0/constraint_0_power_limit_uw
 	#echo '80' > '/sys/devices/system/cpu/intel_pstate/max_perf_pct'
 	/system/bin/powertop --auto-tune
-	#echo 0 > /sys/devices/system/cpu/intel_pstate/no_turbo
-	#echo 'on' > '/sys/bus/i2c/devices/i2c-NTRG0001:01/power/control'
-	#echo 'on' > '/sys/bus/i2c/devices/i2c-MSHW0030:00/power/control'
 }
 
 function init_misc()
